@@ -21,47 +21,50 @@
 
             <!-- Logo -->
             <h1>
-    <a href="{{ url(config('app.url')) }}">
-        <img src="{{ asset('/images/mp-logo.png') }}" alt="Logo Marca Personal FP" width="200px"/>
-    </a>
-</h1>
+                <a href="{{ url(config('app.url')) }}">
+                    <img src="{{ asset('/images/mp-logo.png') }}" alt="Logo Marca Personal FP" width="200px" />
+                </a>
+            </h1>
 
             <h1><a href="index.html">Dopetrope</a></h1>
 
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li>
-                        <a href="#">Dropdown</a>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Magna phasellus</a></li>
-                            <li><a href="#">Etiam dolore nisl</a></li>
-                            <li>
-                                <a href="#">Phasellus consequat</a>
-                                <ul>
-                                    <li><a href="#">Magna phasellus</a></li>
-                                    <li><a href="#">Etiam dolore nisl</a></li>
-                                    <li><a href="#">Veroeros feugiat</a></li>
-                                    <li><a href="#">Nisl sed aliquam</a></li>
-                                    <li><a href="#">Dolore adipiscing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Veroeros feugiat</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    @section('menu')
+
+
+                        <li class="current"><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#">Dropdown</a>
+                            <ul>
+                                <li><a href="#">Lorem ipsum dolor</a></li>
+                                <li><a href="#">Magna phasellus</a></li>
+                                <li><a href="#">Etiam dolore nisl</a></li>
+                                <li>
+                                    <a href="#">Phasellus consequat</a>
+                                    <ul>
+                                        <li><a href="#">Magna phasellus</a></li>
+                                        <li><a href="#">Etiam dolore nisl</a></li>
+                                        <li><a href="#">Veroeros feugiat</a></li>
+                                        <li><a href="#">Nisl sed aliquam</a></li>
+                                        <li><a href="#">Dolore adipiscing</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Veroeros feugiat</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    @show
                 </ul>
             </nav>
 
             <!-- Banner -->
             <section id="banner">
                 <header>
-                    <h2>Howdy. This is Dopetrope.</h2>
-                    <p>A responsive template by HTML5 UP</p>
+                     @yield('content')
                 </header>
             </section>
 
@@ -120,8 +123,8 @@
                             <div class="row">
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic02.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic02.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Ipsum feugiat et dolor</h3>
                                         </header>
@@ -137,8 +140,8 @@
                                 </div>
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic03.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic03.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Sed etiam lorem nulla</h3>
                                         </header>
@@ -154,8 +157,8 @@
                                 </div>
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic04.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic04.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Consequat et tempus</h3>
                                         </header>
@@ -171,8 +174,8 @@
                                 </div>
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic05.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic05.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Blandit sed adipiscing</h3>
                                         </header>
@@ -188,8 +191,8 @@
                                 </div>
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic06.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic06.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Etiam nisl consequat</h3>
                                         </header>
@@ -205,8 +208,8 @@
                                 </div>
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic07.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic07.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Dolore nisl feugiat</h3>
                                         </header>
@@ -234,8 +237,8 @@
                             <div class="row">
                                 <div class="col-6 col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic08.jpg') }}"
-                                                alt="" /></a>
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic08.jpg') }}" alt="" /></a>
                                         <header>
                                             <h3>Magna tempus consequat</h3>
                                             <p>Posted 45 minutes ago</p>
@@ -257,7 +260,8 @@
                                 </div>
                                 <div class="col-6 col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic09.jpg') }}"
+                                        <a href="#" class="image featured"><img
+                                                src="{{ asset('/dopetrope/images/pic09.jpg') }}"
                                                 alt="" /></a>
                                         <header>
                                             <h3>Aptent veroeros aliquam</h3>
@@ -334,8 +338,8 @@
                             <header>
                                 <h2>What's this all about?</h2>
                             </header>
-                            <a href="#" class="image featured"><img src="{{ asset('/dopetrope/images/pic10.jpg') }}"
-                                    alt="" /></a>
+                            <a href="#" class="image featured"><img
+                                    src="{{ asset('/dopetrope/images/pic10.jpg') }}" alt="" /></a>
                             <p>
                                 This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
                                 <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5
