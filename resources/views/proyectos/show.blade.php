@@ -7,7 +7,7 @@
 
         <div class="col-sm-4">
 
-            <img src="/images/mp-logo.png" style="height:200px"/>
+            <img src="/images/mp-logo.png" style="height:200px" />
 
         </div>
         <div class="col-sm-8">
@@ -20,30 +20,35 @@
             </h4>
             <h4><strong>Docente: </strong>{{ $proyecto->docente_id }}</h4>
             <p><strong>Metadatos: </strong>
-                <ul>
-                    @foreach (unserialize($proyecto->metadatos) as $indice => $metadato)
-                        <li>{{ $indice }}: {{ $metadato }}</li>
-                    @endforeach
-                </ul>
+            <ul>
+                @foreach (unserialize($proyecto->metadatos) as $indice => $metadato)
+                    <li>{{ $indice }}: {{ $metadato }}</li>
+                @endforeach
+            </ul>
             </p>
             <p><strong>Estado: </strong>
-                @if(unserialize($proyecto->metadatos)['calificacion'] >= 5)
+                @if (unserialize($proyecto->metadatos)['calificacion'] >= 5)
                     Proyecto aprobado
                 @else
                     Proyecto suspenso
                 @endif
             </p>
+            @auth
+            // Solo los usuarios autenticados pueden ver los botones de aprobar/suspender y editar
 
-            @if(unserialize($proyecto->metadatos)['calificacion'] >= 5)
-                <a class="btn btn-danger" href="#">Suspender proyecto</a>
-            @else
-                <a class="btn btn-primary" href="#">Aprobar proyecto</a>
-            @endif
-            <a class="btn btn-warning" href="{{ action([App\Http\Controllers\ProyectosController::class, 'getEdit'], ['id' => $id]) }}">
-                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                Editar proyecto
-            </a>
-            <a class="btn btn-outline-info" href="{{ action([App\Http\Controllers\ProyectosController::class, 'getIndex']) }}">
+                @if (unserialize($proyecto->metadatos)['calificacion'] >= 5)
+                    <a class="btn btn-danger" href="#">Suspender proyecto</a>
+                @else
+                    <a class="btn btn-primary" href="#">Aprobar proyecto</a>
+                @endif
+                <a class="btn btn-warning"
+                    href="{{ action([App\Http\Controllers\ProyectosController::class, 'getEdit'], ['id' => $id]) }}">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Editar proyecto
+                </a>
+            @endauth
+            <a class="btn btn-outline-info"
+                href="{{ action([App\Http\Controllers\ProyectosController::class, 'getIndex']) }}">
                 Volver al listado
             </a>
 
